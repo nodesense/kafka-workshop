@@ -17,7 +17,7 @@ apt install python -y
 
 apt  install python-setuptools 
 apt install python-pip
-pip install cassandra-driver
+# pip install cassandra-driver
 
 apt install cassandra
 systemctl enable cassandra
