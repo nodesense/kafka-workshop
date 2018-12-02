@@ -23,4 +23,5 @@ systemctl start cassandra
 
 
 wget http://packages.confluent.io/archive/5.0/confluent-oss-5.0.1-2.11.tar.gz
-tar xf http://packages.confluent.io/archive/5.0/confluent-oss-5.0.1-2.11.tar.gz
+tar xf confluent-oss-5.0.1-2.11.tar.gz
+rm confluent-oss-5.0.1-2.11.tar.gz
