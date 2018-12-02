@@ -24,6 +24,13 @@ systemctl enable cassandra
 systemctl start cassandra
 
 
+
+echo "JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64" >> /etc/environment
+echo "JRE_HOME=/usr/lib/jvm/java-8-openjdk-amd64" >> /etc/environment 
+
+
+
+
 wget http://packages.confluent.io/archive/5.0/confluent-oss-5.0.1-2.11.tar.gz
 tar xf confluent-oss-5.0.1-2.11.tar.gz
 rm confluent-oss-5.0.1-2.11.tar.gz
@@ -35,7 +42,7 @@ tar xf spark-2.3.2-bin-hadoop2.7.tgz
 rm spark-2.3.2-bin-hadoop2.7.tgz
 
 
-wget http://mirrors.wuchna.com/apachemirror/hadoop/common/hadoop-2.7.7/hadoop-2.7.7.tar.gz
+wget https://www-eu.apache.org/dist/hadoop/common/hadoop-2.7.7/hadoop-2.7.7.tar.gz
 
 tar xf hadoop-2.7.7.tar.gz
 
