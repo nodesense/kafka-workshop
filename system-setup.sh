@@ -48,4 +48,7 @@ tar xf hadoop-2.7.7.tar.gz
 
 rm hadoop-2.7.7.tar.gz
 
-
+mkdir -p /data/hadoop
+#chown hduser:hadoop  /data/hadoop
+chmod 777 /data/hadoop
+ 
