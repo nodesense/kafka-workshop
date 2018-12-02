@@ -1,5 +1,5 @@
 
-
+USER=`whoami`
 
 echo "deb http://www.apache.org/dist/cassandra/debian 311x main" | sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list
 curl https://www.apache.org/dist/cassandra/KEYS | sudo apt-key add -
@@ -25,9 +25,26 @@ systemctl start cassandra
 
 
 
+
 echo "JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64" >> /etc/environment
 echo "JRE_HOME=/usr/lib/jvm/java-8-openjdk-amd64" >> /etc/environment 
 
+echo "HADOOP_HOME=/$USER/hadoop-2.7.7" >>  /etc/environment
+
+echo "HADOOP_INSTALL=/$USER/hadoop-2.7.7" >>  /etc/environment
+
+echo "HADOOP_MAPRED_HOME=/$USER/hadoop-2.7.7" >>  /etc/environment
+
+echo "HADOOP_COMMON_HOME=/$USER/hadoop-2.7.7" >>  /etc/environment
+
+echo "HADOOP_HDFS_HOME=/$USER/hadoop-2.7.7" >>  /etc/environment
+echo "YARN_HOME=/$USER/hadoop-2.7.7" >>  /etc/environment
+
+echo "HADOOP_COMMON_LIB_NATIVE_DIR=/$USER/hadoop-2.7.7/lib/native" >>  /etc/environment
+ 
+
+
+echo "export PATH=\$PATH:\$HADOOP_HOME/sbin:\$HADOOP_HOME/bin" >>  ~/.profile
 
 
 
