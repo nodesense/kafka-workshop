@@ -44,9 +44,14 @@ echo "HADOOP_COMMON_LIB_NATIVE_DIR=/$USER/hadoop-2.7.7/lib/native" >>  /etc/envi
  
 echo "KAFKA_HOME=/$USER/confluent-5.0.1" >> /etc/environment
 
+echo "SPARK_HOME=/$USER/spark-2.3.2-bin-hadoop2.7" >> /etc/environment
+
+
+
 
 echo "export PATH=\$PATH:\$HADOOP_HOME/sbin:\$HADOOP_HOME/bin" >>  ~/.profile
 echo "export PATH=\$PATH:\$KAFKA_HOME/bin" >>  ~/.profile
+echo "export PATH=\$PATH:\$SPARK_HOME/bin:\$SPARK_HOME/sbin" >>  ~/.profile
 
 
 
