@@ -7,19 +7,19 @@ curl https://www.apache.org/dist/cassandra/KEYS | sudo apt-key add -
 #apt update
 #apt upgrade
 
-apt install nodejs
+apt install nodejs  -y
 
-apt install mariadb-server
+apt install mariadb-server  -y
 
-apt install openjdk-8-jdk
+apt install openjdk-8-jdk -y
 
 apt install python -y
 
-apt  install python-setuptools 
-apt install python-pip
+apt  install python-setuptools  -y
+apt install python-pip  -y
 # pip install cassandra-driver
 
-apt install cassandra
+apt install cassandra  -y
 systemctl enable cassandra
 systemctl start cassandra
 
