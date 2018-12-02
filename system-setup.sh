@@ -4,8 +4,8 @@ USER=`whoami`
 echo "deb http://www.apache.org/dist/cassandra/debian 311x main" | sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list
 curl https://www.apache.org/dist/cassandra/KEYS | sudo apt-key add -
 
-apt update
-apt upgrade
+#apt update
+#apt upgrade
 
 apt install nodejs
 
@@ -22,8 +22,6 @@ apt install python-pip
 apt install cassandra
 systemctl enable cassandra
 systemctl start cassandra
-
-
 
 
 echo "JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64" >> /etc/environment
