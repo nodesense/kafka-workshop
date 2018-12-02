@@ -32,6 +32,13 @@ wget http://mirrors.fibergrid.in/apache/spark/spark-2.3.2/spark-2.3.2-bin-hadoop
 
 tar xf spark-2.3.2-bin-hadoop2.7.tgz
 
+rm spark-2.3.2-bin-hadoop2.7.tgz
+
+
 wget http://mirrors.wuchna.com/apachemirror/hadoop/common/hadoop-2.7.7/hadoop-2.7.7.tar.gz
 
 tar xf hadoop-2.7.7.tar.gz
+
+rm hadoop-2.7.7.tar.gz
+
+
