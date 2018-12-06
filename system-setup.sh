@@ -1,3 +1,4 @@
+set -x
 
 USER=`whoami`
 
@@ -15,7 +16,6 @@ apt update
 #apt upgrade
 
 apt install nodejs  -y
-
 
 apt install openjdk-8-jdk -y
 
