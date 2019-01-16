@@ -9,4 +9,4 @@ CREATE KEYSPACE cycling WITH replication = {'class':'SimpleStrategy', 'replicati
  USE cycling;
  
  
- CREATE TABLE cycling.cyclist_alt_stats ( id UUID PRIMARY KEY, lastname text, birthday timestamp, nationality text, weight text, height text );
+CREATE TABLE cycling.cyclist_alt_stats ( id UUID PRIMARY KEY, lastname text, birthday timestamp, nationality text, weight text, height text );
