@@ -1,3 +1,17 @@
+First shutdown Kafka 
+
+Copy mysql*jars to share/java/kafka-connect-jdbc/
+
+cp mysql-connector-java-5.1.47.jar /root/confluent-5.1.1/share/java/kafka-connect-jdbc/
+
+cp mysql-connector-java-5.1.47-bin.jar /root/confluent-5.1.1/share/java/kafka-connect-jdbc/
+
+
+confluent load order_jdbc_source -d order-jdbc-source.json
+
+
+
+
 confluent load jdbc_source_mysql_foobar_01 -d  kafka-connect-jdbc-source.json
 
 confluent status jdbc_source_mysql_foobar_01
