@@ -80,8 +80,12 @@ systemctl start elasticsearch.service
 
 # apt install libmysql-java
 
-wget http://packages.confluent.io/archive/5.0/confluent-5.0.1-2.11.tar.gz
-tar xf confluent-5.0.1-2.11.tar.gz
+#wget http://packages.confluent.io/archive/5.0/confluent-5.0.1-2.11.tar.gz
+#tar xf confluent-5.0.1-2.11.tar.gz
+
+wget http://packages.confluent.io/archive/5.1/confluent-5.1.1-2.11.tar.gz
+tar xf confluent-5.1.1-2.11.tar.gz
+
 
 wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.47.tar.gz
 
