@@ -10,9 +10,17 @@ cp mysql-connector-java-5.1.47-bin.jar /root/confluent-5.1.1/share/java/kafka-co
 confluent load order_jdbc_source -d order-jdbc-source.json
 
 
+kafka-avro-console-consumer --bootstrap-server localhost:9092 --topic db-orders --from-beginning
+
+
+----
 
 
 confluent load jdbc_source_mysql_foobar_01 -d  kafka-connect-jdbc-source.json
+
+
+
+
 
 confluent status jdbc_source_mysql_foobar_01
 
@@ -35,6 +43,9 @@ tail -f /tmp/kafka-mysql-foobar.txt
 confluent load es-sink-mysql-foobar-01 -d kafka-connect-elasticsearch-sink.json
 
 curl -s "http://localhost:9200/mysql-foobar/_search"|jq '.hits'
+
+
+
 
 
 
