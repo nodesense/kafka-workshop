@@ -1,6 +1,10 @@
 {
   "name": "order_jdbc_source",
   "config": {
+        "_comment": "http://localhost:9092",
+
+    "bootstrap.servers": "http://116.203.30.134:9092",
+
     "_comment": "The JDBC connector class. Don't change this if you want to use the JDBC Source.",
     "connector.class": "io.confluent.connect.jdbc.JdbcSourceConnector",
 
