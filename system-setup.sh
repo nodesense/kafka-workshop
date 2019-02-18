@@ -45,7 +45,7 @@ echo "YARN_HOME=/$USER/hadoop-2.7.7" >>  /etc/environment
 
 echo "HADOOP_COMMON_LIB_NATIVE_DIR=/$USER/hadoop-2.7.7/lib/native" >>  /etc/environment
  
-echo "KAFKA_HOME=/$USER/confluent-5.0.1" >> /etc/environment
+echo "KAFKA_HOME=/$USER/confluent-5.1.1" >> /etc/environment
 
 echo "SPARK_HOME=/$USER/spark-2.3.2-bin-hadoop2.7" >> /etc/environment
 
@@ -74,14 +74,14 @@ systemctl start cassandra
 systemctl start elasticsearch.service
 
 
-#wget http://packages.confluent.io/archive/5.0/confluent-oss-5.0.1-2.11.tar.gz
-#tar xf confluent-oss-5.0.1-2.11.tar.gz
-#rm confluent-oss-5.0.1-2.11.tar.gz
+#wget http://packages.confluent.io/archive/5.1/confluent-oss-5.1.1-2.11.tar.gz
+#tar xf confluent-oss-5.1.1-2.11.tar.gz
+#rm confluent-oss-5.1.1-2.11.tar.gz
 
 # apt install libmysql-java
 
-#wget http://packages.confluent.io/archive/5.0/confluent-5.0.1-2.11.tar.gz
-#tar xf confluent-5.0.1-2.11.tar.gz
+#wget http://packages.confluent.io/archive/5.1/confluent-5.1.1-2.11.tar.gz
+#tar xf confluent-5.1.1-2.11.tar.gz
 
 wget http://packages.confluent.io/archive/5.1/confluent-5.1.1-2.11.tar.gz
 tar xf confluent-5.1.1-2.11.tar.gz
@@ -90,7 +90,7 @@ tar xf confluent-5.1.1-2.11.tar.gz
 wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.47.tar.gz
 
 tar xf mysql-connector-java-5.1.47.tar.gz
-cp mysql-connector-java-5.1.47/*.jar confluent-5.0.1/share/java/kafka-connect-jdbc
+cp mysql-connector-java-5.1.47/*.jar confluent-5.1.1/share/java/kafka-connect-jdbc
 
 
 wget http://apache.cs.utah.edu/spark/spark-2.3.2/spark-2.3.2-bin-hadoop2.7.tgz
