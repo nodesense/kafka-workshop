@@ -13,7 +13,7 @@ confluent load order_jdbc_source -d order-jdbc-source.json
 kafka-avro-console-consumer --bootstrap-server localhost:9092 --topic db-orders --from-beginning
 
 
-confluent load order-mysql-sink -d mysql-orders-sink.json
+confluent load mysql_orders_sink -d mysql-orders-sink.properties
 
 
 
