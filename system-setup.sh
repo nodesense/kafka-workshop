@@ -36,7 +36,7 @@ echo "YARN_HOME=/$USER/hadoop-2.7.7" >>  /etc/environment
 
 echo "HADOOP_COMMON_LIB_NATIVE_DIR=/$USER/hadoop-2.7.7/lib/native" >>  /etc/environment
  
-echo "KAFKA_HOME=/$USER/confluent-5.1.2" >> /etc/environment
+echo "KAFKA_HOME=/$USER/confluent-5.2.2" >> /etc/environment
 
 echo "SPARK_HOME=/$USER/spark-2.3.2-bin-hadoop2.7" >> /etc/environment
 
