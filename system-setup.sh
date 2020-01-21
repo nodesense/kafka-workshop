@@ -6,12 +6,6 @@ USER=`whoami`
 #cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys
 
 
-echo "deb http://www.apache.org/dist/cassandra/debian 311x main" | sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list
-curl https://www.apache.org/dist/cassandra/KEYS | sudo apt-key add -
-
-wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
-
-
 apt update
 #apt upgrade
 
@@ -25,9 +19,6 @@ apt install jq -y
 
 apt  install python-setuptools  -y
 apt install python-pip  -y
-# pip install cassandra-driver
-
-
 
 echo "JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64" >> /etc/environment
 echo "JRE_HOME=/usr/lib/jvm/java-8-openjdk-amd64" >> /etc/environment 
@@ -54,43 +45,17 @@ echo "export PATH=\$PATH:\$HADOOP_HOME/sbin:\$HADOOP_HOME/bin" >>  ~/.profile
 echo "export PATH=\$PATH:\$KAFKA_HOME/bin" >>  ~/.profile
 echo "export PATH=\$PATH:\$SPARK_HOME/bin:\$SPARK_HOME/sbin" >>  ~/.profile
 
-
-
 apt install mysql-server  -y
 apt install apt-transport-https -y
 
-apt install elasticsearch -y
 
-
-apt install cassandra  -y
-
-#systemctl daemon-reload
-
-systemctl enable cassandra
-systemctl enable elasticsearch.service
-
-
-systemctl start cassandra
-systemctl start elasticsearch.service
-
-
-#wget http://packages.confluent.io/archive/5.1/confluent-oss-5.1.1-2.11.tar.gz
-#tar xf confluent-oss-5.1.1-2.11.tar.gz
-#rm confluent-oss-5.1.1-2.11.tar.gz
-
-# apt install libmysql-java
-
-#wget http://packages.confluent.io/archive/5.1/confluent-5.1.2-2.11.tar.gz
-#tar xf confluent-5.1.2-2.11.tar.gz
-
-wget http://packages.confluent.io/archive/5.1/confluent-5.1.2-2.11.tar.gz
-tar xf confluent-5.1.2-2.11.tar.gz
-
+wget http://packages.confluent.io/archive/5.2/confluent-5.2.2-2.11.tar.gz
+tar xf confluent-5.2.2-2.11.tar.gz
 
 wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.47.tar.gz
 
 tar xf mysql-connector-java-5.1.47.tar.gz
-cp mysql-connector-java-5.1.47/*.jar confluent-5.1.2/share/java/kafka-connect-jdbc
+cp mysql-connector-java-5.1.47/*.jar confluent-5.2.2/share/java/kafka-connect-jdbc
 
 
 wget http://apache.cs.utah.edu/spark/spark-2.3.2/spark-2.3.2-bin-hadoop2.7.tgz
