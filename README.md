@@ -1,3 +1,5 @@
+# Non-Secure Kafka Setup for Training/Development
+
 # kafka-workshop
 New repo with easy setup
 
@@ -17,6 +19,15 @@ confluent start
 ssh-keygen -t rsa -P ""
 cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys
 ssh localhost
+
+
+mkdir -p /data/hdfs
+
+chmod -R 777 /data/hdfs
+
+hdfs namenode -format
+
+
 
 start-all.sh
 
