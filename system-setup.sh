@@ -89,6 +89,9 @@ wget -P $HADOOP_HOME/etc/hadoop/ https://raw.githubusercontent.com/nodesense/kaf
 wget -P $HADOOP_HOME/etc/hadoop/ https://raw.githubusercontent.com/nodesense/kafka-workshop/master/hadoop/mapred-site.xml
 wget -P $HADOOP_HOME/etc/hadoop/ https://raw.githubusercontent.com/nodesense/kafka-workshop/master/hadoop/yarn-site.xml
 
+ssh-keyscan localhost,0.0.0.0 > ~/.ssh/known_hosts
+chmod +x hadoop-2.7.7/sbin/start-all.sh
+
 mkdir -p /data/hdfs
 #chown hduser:hadoop  /data/hadoop
 chmod 777 /data/hdfs
