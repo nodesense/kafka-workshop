@@ -24,7 +24,7 @@ display status of the specific connector
 
 ## Working with Connectors
 
-1. [File Source Connector](./file-source-connector.md)
+1. [File Source Connector](./docs/file-source-connector.md)
 
 
 # Using File Source Connectors
