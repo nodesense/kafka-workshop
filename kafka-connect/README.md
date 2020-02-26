@@ -54,34 +54,34 @@ topic=stocks
 #DONE
 
 
-touch stocks.csv
+    touch stocks.csv
 
 Load the connectors into kafka?, this will load source connector, keep watching for  stocks.csv changes
 
-confluent load stock-file-source -d file-source.properties
+    confluent load stock-file-source -d file-source.properties
 
 Check whether connector is running or not
 
-confluent status connectors
+    confluent status connectors
 
 To know specific connector status
 
-confluent status stock-file-source
+    confluent status stock-file-source
 
 Put some data into csv file
 
-echo "1234,10" >> stocks.csv
+    echo "1234,10" >> stocks.csv
 
-echo "1235,20" >> stocks.csv
+    echo "1235,20" >> stocks.csv
 
-echo "1236,30" >> stocks.csv
+    echo "1236,30" >> stocks.csv
 
 
-cat stocks.csv
+    cat stocks.csv
 
 
 
 # Second command prompt in your Windows/Linux Putty shell
 
-kafka-console-consumer --bootstrap-server k5.nodesense.ai:9092 --topic stocks --from-beginning
+    kafka-console-consumer --bootstrap-server k5.nodesense.ai:9092 --topic stocks --from-beginning
 
