@@ -34,3 +34,38 @@ hdfs namenode -format
 start-all.sh
 
 http://hostname:50070
+
+
+# Consumer Group
+
+
+    kafka-consumer-groups --bootstrap-server k5.nodesense.ai:9092 --list
+
+    kafka-consumer-groups --bootstrap-server k5.nodesense.ai:9092 --describe --group invoice-consumer-example
+
+with active members if any
+
+    kafka-consumer-groups --bootstrap-server k5.nodesense.ai:9092 --describe --group invoice-consumer-example --members
+
+ --state [assignment strategy, round robin, range]
+ 
+    kafka-consumer-groups --bootstrap-server k5.nodesense.ai:9092 --describe --group invoice-consumer-example --state 
+
+
+delete consumer group --group my-other-group1 --group my-other-group2
+
+    kafka-consumer-groups --bootstrap-server localhost:9092 --delete --group  --group invoice-consumer-example
+ 
+
+to reset offsets of a consumer group to the latest offset
+
+    kafka-consumer-groups.sh --bootstrap-server localhost:9092 --reset-offsets --group consumergroup1 --topic topic1 --to-latest
+
+
+Alter paritions
+
+    kafka-topics --zookeeper k5.nodesense.ai:2181 --describe --topic greetings  
+    
+    kafka-topics --zookeeper k5.nodesense.ai:2181 --alter --topic greetings  --partitions 4
+
+    

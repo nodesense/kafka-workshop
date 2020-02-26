@@ -37,7 +37,7 @@ display status of the specific connector
 
     Ctrl + X - To Quit, it will to save or leave without saving file
     
-    Ctrl + W  - Write to file
+    Ctrl + O  - Write to file
 
 
 Create a property file for connector configureation/Source connector
