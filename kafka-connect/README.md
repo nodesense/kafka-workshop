@@ -163,5 +163,43 @@ Check status
 
     confluent status greetings-file-sink
 
+Run SimpleProducer.java, produce to topic greetings
+
     cat greetings.txt
+
+
+## One last example Avro and file sink
+
+    touch invoices.txt
+
+
+    touch invoices-file-sink.properties
+
+    nano invoices-file-sink.properties
+
+paste below content
+
+```
+name=invoices-file-sink
+connector.class=FileStreamSink
+tasks.max=1
+file=/root/invoices.txt
+topics=invoices
+key.converter=io.confluent.connect.avro.AvroConverter
+value.converter=io.confluent.connect.avro.AvroConverter
+key.converter.schema.registry.url=http://k5.nodesense.ai:8081
+value.converter.schema.registry.url=http://k5.nodesense.ai:8081
+```
+
+Load connectors
+
+    confluent load invoices-file-sink -d invoices-file-sink.properties
+    
+    confluent status invoices-file-sink
+ 
+
+Then Run InvoiceProducer.java
+
+    cat invoices.txt
+
 
