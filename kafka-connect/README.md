@@ -22,6 +22,10 @@ display status of the specific connector
 `confluent status <<connector-id>>`
 
 
+## Working with Connectors
+
+1. [File Source Connector](file-source-connector.md)
+
 
 # Using File Source Connectors
 
