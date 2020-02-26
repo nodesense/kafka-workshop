@@ -89,3 +89,79 @@ Put some data into csv file
 
     kafka-console-consumer --bootstrap-server k5.nodesense.ai:9092 --topic stocks --from-beginning
 
+# FILE SINK Connectors
+
+
+Consume data from Kafka Topics and write to file
+
+    touch output-file.csv
+
+    touch file-sink.properties
+
+    nano file-sink.properties
+
+paste below content
+
+```
+name=stock-file-sink
+connector.class=FileStreamSink
+tasks.max=1
+file=/root/output-file.csv
+topics=stocks
+```
+
+Load connector
+
+    confluent load stock-file-sink -d file-sink.properties
+
+Check status
+
+    confluent status connectors
+
+    confluent status stock-file-sink
+
+    cat output-file.csv
+
+
+Add a line to stocks
+
+    echo "1237,30" >> stocks.csv
+
+Check if reflected in output-file.csv
+
+    cat output-file.csv
+
+
+### Using Converters
+
+    touch greetings.txt
+
+    touch greetings-file-sink.properties
+
+    nano greetings-file-sink.properties
+
+paste below content
+
+```
+name=greetings-file-sink
+connector.class=FileStreamSink
+tasks.max=1
+file=/root/greetings.txt
+topics=greetings
+key.converter=org.apache.kafka.connect.storage.StringConverter
+value.converter=org.apache.kafka.connect.storage.StringConverter
+```
+
+
+Load connector
+
+    confluent load greetings-file-sink -d greetings-file-sink.properties
+
+Check status
+
+    confluent status connectors
+
+    confluent status greetings-file-sink
+
+    cat greetings.txt
+
