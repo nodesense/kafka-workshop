@@ -203,6 +203,44 @@ Then Run InvoiceProducer.java
     cat invoices.txt
 
 
+## JSON Converter type
+
+
+
+    touch invoices.json
+
+
+    touch invoices-json-sink.properties
+
+    nano invoices-json-sink.properties
+
+paste below content
+
+```
+name=invoices-json-sink
+connector.class=FileStreamSink
+tasks.max=1
+file=/root/invoices.json
+topics=invoices
+key.converter=io.confluent.connect.avro.AvroConverter
+value.converter=org.apache.kafka.connect.json.JsonConverter
+key.converter.schema.registry.url=http://k5.nodesense.ai:8081
+value.converter.schema.registry.url=http://k5.nodesense.ai:8081
+```
+
+Load connectors
+
+    confluent load invoices-json-sink -d invoices-json-sink.properties
+    
+    confluent status invoices-json-sink
+ 
+
+Then Run InvoiceProducer.java
+
+    cat invoices.json
+
+
+
 MYSQL
 
 MySQL JDBC not included in Kafka Distribution
