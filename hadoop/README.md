@@ -29,6 +29,16 @@ Chech browser with
 
     http://k5.training.sh:50070/explorer.html#/
 
+
+# HDFS Sink Connector
+
+
+    touch hdfs-sink.properties
+
+    nano hdfs-sink.properties
+
+
+
 hdfs-sink.properties
 
 ```
@@ -43,3 +53,8 @@ value.converter=org.apache.kafka.connect.storage.StringConverter
 ```
 
 
+    confluent load hdfs-sink -d hdfs-sink.properties
+
+    confluent status connectors
+
+    confluent status hdfs-sink
