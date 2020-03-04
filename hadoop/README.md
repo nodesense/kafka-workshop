@@ -8,6 +8,8 @@ Open separate putty
 
     ssh-keygen -t rsa -P ""
 
+press enter key to save the public key
+
     cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys
 
     ssh localhost
@@ -25,7 +27,7 @@ Chech browser with
     http://hostname:50070
 
 
-    http://k5.nodesense.ai:50070/explorer.html#/
+    http://k5.training.sh:50070/explorer.html#/
 
 hdfs-sink.properties
 
