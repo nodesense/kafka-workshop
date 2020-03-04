@@ -1,5 +1,10 @@
 
+
+
 # HADOOP
+
+Open separate putty
+
 
     ssh-keygen -t rsa -P ""
 
