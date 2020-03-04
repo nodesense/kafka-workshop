@@ -58,3 +58,9 @@ value.converter=org.apache.kafka.connect.storage.StringConverter
     confluent status connectors
 
     confluent status hdfs-sink
+
+Now check browser with http://k1.training.sh:50070/explorer.html#/
+
+Check if the topic present in 
+
+http://k1.training.sh:50070/explorer.html#/topics
