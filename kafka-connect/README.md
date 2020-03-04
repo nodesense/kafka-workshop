@@ -203,7 +203,7 @@ Then Run InvoiceProducer.java
     cat invoices.txt
 
 
-## JSON Converter type
+## JSON Converter type, NOT WORKING
 
 
 
@@ -248,10 +248,11 @@ MySQL JDBC not included in Kafka Distribution
 Devleopers to download jdbc jars of oracle/mysql/ms sql
 
 
-wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.47.tar.gz
+    wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.47.tar.gz
 
-tar xf mysql-connector-java-5.1.47.tar.gz
-cp mysql-connector-java-5.1.47/*.jar confluent-5.2.2/share/java/kafka-connect-jdbc
+    tar xf mysql-connector-java-5.1.47.tar.gz
+    
+    cp mysql-connector-java-5.1.47/*.jar confluent-5.2.2/share/java/kafka-connect-jdbc
 
 
                        
