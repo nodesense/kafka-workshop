@@ -393,6 +393,14 @@ table.name.format=somename_table
 
 
     confluent load mysql-product-sink -d  mysql-product-sink.properties
+    
+   
+    confluent status connectors
+    
+    confluent status  mysql-product-sink
+    
+    
+    
 
 Check with below command.
 
