@@ -53,6 +53,9 @@ export CLASSPATH=$CLASSPATH:$HIVE_HOME/lib/*:.
 cp $HIVE_HOME/conf/hive-env.sh.template $HIVE_HOME/conf/hive-env.sh
 cp $HIVE_HOME/conf/hive-default.xml.template $HIVE_HOME/conf/hive-site.xml
 
+wget -P $HIVE_HOME/conf https://raw.githubusercontent.com/nodesense/kafka-workshop/master/hadoop/hive-site.xml
+
+
 wget http://archive.apache.org/dist/db/derby/db-derby-10.4.2.0/db-derby-10.4.2.0-bin.tar.gz
 tar xf  db-derby-10.4.2.0-bin.tar.gz
 mv db-derby-10.4.2.0-bin     db-derby-10.4.2.0
@@ -74,3 +77,13 @@ chmod +x hadoop-2.7.7/sbin/start-all.sh
 mkdir -p /data/hdfs
 #chown hduser:hadoop  /data/hadoop
 chmod 777 /data/hdfs
+
+
+$HADOOP_HOME/bin/hadoop fs -mkdir /tmp 
+$HADOOP_HOME/bin/hadoop fs -mkdir /user
+
+$HADOOP_HOME/bin/hadoop fs -mkdir /user/hive
+
+$HADOOP_HOME/bin/hadoop fs -mkdir /user/hive/warehouse
+$HADOOP_HOME/bin/hadoop fs -chmod g+w /tmp 
+$HADOOP_HOME/bin/hadoop fs -chmod g+w /user/hive/warehouse
