@@ -8,14 +8,15 @@ apt update
 apt install openjdk-8-jdk -y
 
 wget https://archive.apache.org/dist/hadoop/common/hadoop-2.7.7/hadoop-2.7.7.tar.gz
-
 wget https://downloads.apache.org/hive/hive-2.3.7/apache-hive-2.3.7-bin.tar.gz
-
+wget http://archive.apache.org/dist/db/derby/db-derby-10.4.2.0/db-derby-10.4.2.0-bin.tar.gz
 
 tar xf hadoop-2.7.7.tar.gz
-
 tar xf apache-hive-2.3.7-bin.tar.gz
 mv apache-hive-2.3.7-bin apache-hive-2.3.7
+tar xf  db-derby-10.4.2.0-bin.tar.gz
+mv db-derby-10.4.2.0-bin     db-derby-10.4.2.0
+
 
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export JRE_HOME=/usr/lib/jvm/java-8-openjdk-amd64
@@ -54,9 +55,6 @@ cp $HIVE_HOME/conf/hive-default.xml.template $HIVE_HOME/conf/hive-site.xml
 wget -P $HIVE_HOME/conf https://raw.githubusercontent.com/nodesense/kafka-workshop/master/hadoop/hive-site.xml
 
 
-wget http://archive.apache.org/dist/db/derby/db-derby-10.4.2.0/db-derby-10.4.2.0-bin.tar.gz
-tar xf  db-derby-10.4.2.0-bin.tar.gz
-mv db-derby-10.4.2.0-bin     db-derby-10.4.2.0
 
 export DERBY_HOME=/$USER/db-derby-10.4.2.0
 export PATH=$PATH:$DERBY_HOME/bin
