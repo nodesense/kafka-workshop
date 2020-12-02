@@ -22,7 +22,15 @@ export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export JRE_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export HADOOP_HOME=/$USER/hadoop-2.7.7
 export HIVE_HOME=/$USER/apache-hive-2.3.7
+export DERBY_HOME=/$USER/db-derby-10.4.2.0
 
+export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
+export PATH=$PATH:$DERBY_HOME/bin
+export PATH=$PATH:$HIVE_HOME/bin
+
+export CLASSPATH=$CLASSPATH:$DERBY_HOME/lib/derby.jar:$DERBY_HOME/lib/derbytools.jar
+export CLASSPATH=$CLASSPATH:$HADOOP_HOME/lib/*:.
+export CLASSPATH=$CLASSPATH:$HIVE_HOME/lib/*:.
 
 echo "JAVA_HOME=$JAVA_HOME" >> /etc/environment
 echo "JRE_HOME=$JRE_HOME" >> /etc/environment 
@@ -34,31 +42,21 @@ echo "HADOOP_COMMON_HOME=/$USER/hadoop-2.7.7" >>  /etc/environment
 echo "HADOOP_HDFS_HOME=/$USER/hadoop-2.7.7" >>  /etc/environment
 echo "YARN_HOME=/$USER/hadoop-2.7.7" >>  /etc/environment
 echo "HADOOP_COMMON_LIB_NATIVE_DIR=/$USER/hadoop-2.7.7/lib/native" >>  /etc/environment
+echo "HIVE_HOME=/$USER/apache-hive-2.3.7" >>  /etc/environment
+echo "DERBY_HOME=/$USER/db-derby-10.4.2.0" >>  /etc/environment
  
 echo "export PATH=\$PATH:\$HADOOP_HOME/sbin:\$HADOOP_HOME/bin" >>  ~/.profile
-
-echo "HIVE_HOME=/$USER/apache-hive-2.3.7" >>  /etc/environment
 
 mv $HADOOP_HOME/etc/hadoop/core-site.xml $HADOOP_HOME/etc/hadoop/core-site.xml.original
 mv $HADOOP_HOME/etc/hadoop/hdfs-site.xml $HADOOP_HOME/etc/hadoop/hdfs-site.xml.original
 mv $HADOOP_HOME/etc/hadoop/mapred-site.xml $HADOOP_HOME/etc/hadoop/mapred-site.xml.original
 mv $HADOOP_HOME/etc/hadoop/yarn-site.xml $HADOOP_HOME/etc/hadoop/yarn-site.xml.original
 
-
-export PATH=$PATH:$HIVE_HOME/bin
-export CLASSPATH=$CLASSPATH:$HADOOP_HOME/lib/*:.
-export CLASSPATH=$CLASSPATH:$HIVE_HOME/lib/*:.
-
 cp $HIVE_HOME/conf/hive-env.sh.template $HIVE_HOME/conf/hive-env.sh
 cp $HIVE_HOME/conf/hive-default.xml.template $HIVE_HOME/conf/hive-site.xml
 
 wget -P $HIVE_HOME/conf https://raw.githubusercontent.com/nodesense/kafka-workshop/master/hadoop/hive-site.xml
 
-
-
-export DERBY_HOME=/$USER/db-derby-10.4.2.0
-export PATH=$PATH:$DERBY_HOME/bin
-export CLASSPATH=$CLASSPATH:$DERBY_HOME/lib/derby.jar:$DERBY_HOME/lib/derbytools.jar
 
 mkdir -p  /data/derby
 
