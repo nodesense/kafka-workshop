@@ -69,7 +69,10 @@ Alter paritions
     kafka-topics --zookeeper k5.nodesense.ai:2181 --alter --topic greetings  --partitions 4
     
 ## HIVE
+    default ports 10000
 
     rm -rf metastore_db/
 
     $HIVE_HOME/bin/schematool -initSchema -dbType derby
+
+    bin/hive --service metastore
