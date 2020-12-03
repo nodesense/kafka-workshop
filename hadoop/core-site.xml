@@ -1,10 +1,22 @@
 <configuration>
+
 <property>
 <name>fs.defaultFS</name>
 <value>hdfs://localhost:9000</value>
 </property>
+  
 <property>
 <name>hadoop.tmp.dir</name>
 <value>/data/hdfs</value>
+</property>
+  
+  <property>
+    <name>hadoop.proxyuser.hive.hosts</name>
+    <value>*</value>
+</property>
+
+<property>
+    <name>hadoop.proxyuser.hive.groups</name>
+    <value>*</value>
 </property>
 </configuration>
