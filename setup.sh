@@ -70,6 +70,10 @@ wget -P $HADOOP_HOME/etc/hadoop/ https://raw.githubusercontent.com/nodesense/kaf
 wget -P $HADOOP_HOME/etc/hadoop/ https://raw.githubusercontent.com/nodesense/kafka-workshop/master/hadoop/mapred-site.xml
 wget -P $HADOOP_HOME/etc/hadoop/ https://raw.githubusercontent.com/nodesense/kafka-workshop/master/hadoop/yarn-site.xml
 
+ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa <<<y 2>&1 >/dev/null
+cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys
+
+
 ssh-keyscan localhost,0.0.0.0 > ~/.ssh/known_hosts
 chmod +x hadoop-2.7.7/sbin/start-all.sh
 
