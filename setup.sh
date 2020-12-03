@@ -82,6 +82,9 @@ mkdir -p /data/hdfs
 #chown hduser:hadoop  /data/hadoop
 chmod 777 /data/hdfs
 
+hdfs namenode -format
+
+$HADOOP_HOME/sbin/start-all.sh
 
 $HADOOP_HOME/bin/hadoop fs -mkdir /tmp 
 $HADOOP_HOME/bin/hadoop fs -mkdir /user
