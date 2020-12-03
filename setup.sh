@@ -64,7 +64,7 @@ cp $HIVE_HOME/conf/hive-env.sh.template $HIVE_HOME/conf/hive-env.sh
 wget -P $HIVE_HOME/conf https://raw.githubusercontent.com/nodesense/kafka-workshop/master/hadoop/hive-site.xml
 
 
-mkdir -p  /data/derby
+
 
 wget -P $HADOOP_HOME/etc/hadoop/ https://raw.githubusercontent.com/nodesense/kafka-workshop/master/hadoop/core-site.xml
 wget -P $HADOOP_HOME/etc/hadoop/ https://raw.githubusercontent.com/nodesense/kafka-workshop/master/hadoop/hdfs-site.xml
@@ -78,9 +78,12 @@ cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys
 ssh-keyscan localhost,0.0.0.0,k1.training.sh > ~/.ssh/known_hosts
 chmod +x hadoop-2.7.7/sbin/start-all.sh
 
+rmdir -rf /data
+
 mkdir -p /data/hdfs
-#chown hduser:hadoop  /data/hadoop
 chmod 777 /data/hdfs
+mkdir -p  /data/derby
+chmod 777 /data/derby
 
 hdfs namenode -format
 
