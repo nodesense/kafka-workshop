@@ -23,6 +23,8 @@ export JRE_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export HADOOP_HOME=/$USER/hadoop-2.7.7
 export HIVE_HOME=/$USER/apache-hive-2.3.7
 export DERBY_HOME=/$USER/db-derby-10.4.2.0
+export HIVE_PORT=10000
+
 
 export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
 export PATH=$PATH:$DERBY_HOME/bin
@@ -44,8 +46,11 @@ echo "YARN_HOME=/$USER/hadoop-2.7.7" >>  /etc/environment
 echo "HADOOP_COMMON_LIB_NATIVE_DIR=/$USER/hadoop-2.7.7/lib/native" >>  /etc/environment
 echo "HIVE_HOME=/$USER/apache-hive-2.3.7" >>  /etc/environment
 echo "DERBY_HOME=/$USER/db-derby-10.4.2.0" >>  /etc/environment
+echo "HIVE_PORT=10000" >>  /etc/environment
  
 echo "export PATH=\$PATH:\$HADOOP_HOME/sbin:\$HADOOP_HOME/bin" >>  ~/.profile
+
+export HIVE_PORT=10000
 
 mv $HADOOP_HOME/etc/hadoop/core-site.xml $HADOOP_HOME/etc/hadoop/core-site.xml.original
 mv $HADOOP_HOME/etc/hadoop/hdfs-site.xml $HADOOP_HOME/etc/hadoop/hdfs-site.xml.original
