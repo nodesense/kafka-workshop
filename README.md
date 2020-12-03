@@ -86,4 +86,10 @@ Alter paritions
      netstat -tulpn | grep :10000
      netstat -tnlpa | grep `cat /var/run/hive/hive-server.pid`
      
+     $HIVE_HOME/bin/schematool -dbType derby -initSchema
      
+     hive --service hiveserver
+     
+ https://stackoverflow.com/questions/57232245/hiveserver2-hangs-while-starting-nothing-listening-on-port-10000
+ 
+
