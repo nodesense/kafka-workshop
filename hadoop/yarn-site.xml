@@ -8,27 +8,5 @@
     <value>org.apache.hadoop.mapred.ShuffleHandler</value>
     </property>
     
-    <property> 
- <name>yarn.resourcemanager.resource-tracker.address</name> 
- <value>k1.training.sh:8025</value>  
-</property>
-<property> 
- <name>yarn.resourcemanager.scheduler.address</name> 
- <value>k1.training.sh:8030</value>  
-</property>
-<property> 
- <name>yarn.resourcemanager.address</name> 
- <value>k1.training.sh:8050</value>  
-</property>
-<property> 
- <name>yarn.resourcemanager.admin.address</name> 
- <value>k1.training.sh:8141</value>  
-</property>
-    
-    <property> 
- <name>yarn.resourcemanager.webapp.address</name> 
- <value>k1.training.sh:8088</value>
- <description>URL for job history server</description>
-</property>
-    
+     
 </configuration>
