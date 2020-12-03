@@ -2,8 +2,8 @@
 
 <property>
 <name>fs.defaultFS</name>
-<!-- <value>hdfs://localhost:9000</value> -->
-  <value>hdfs://k1.training.sh:9000</value>
+<value>hdfs://localhost:9000</value> 
+  
 </property>
   
 <property>
