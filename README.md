@@ -9,6 +9,8 @@ wget https://raw.githubusercontent.com/nodesense/kafka-workshop/master/setup.sh 
 
 hdfs namenode -format
 
+$HADOOP_HOME/sbin/start-all.sh
+
 wget https://raw.githubusercontent.com/nodesense/kafka-workshop/master/configure.sh -O - -o /dev/null|bash
 
 
