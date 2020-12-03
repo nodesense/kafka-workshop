@@ -3,4 +3,14 @@
     <name>dfs.replication</name>
     <value>1</value>
     </property>
+    
+    <property> 
+        <name>dfs.namenode.http-address</name> 
+        <value>k1.training.sh:50070</value>  
+    </property>
+    <property> 
+        <name>dfs.namenode.secondary.http-address</name> 
+        <value>k1.training.sh:50090</value>  
+    </property>
+    
 </configuration>
