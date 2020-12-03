@@ -9,3 +9,9 @@ $HADOOP_HOME/bin/hadoop fs -mkdir /user/hive
 $HADOOP_HOME/bin/hadoop fs -mkdir /user/hive/warehouse
 $HADOOP_HOME/bin/hadoop fs -chmod g+w /tmp 
 $HADOOP_HOME/bin/hadoop fs -chmod g+w /user/hive/warehouse
+
+
+rm -rf $HIVE_HOME/metastore_db/
+
+$HIVE_HOME/bin/schematool -initSchema -dbType derby
+
