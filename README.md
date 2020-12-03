@@ -3,6 +3,10 @@
 # kafka-workshop
 New repo with easy setup, for Ubuntu 18.04.
 
+
+wget https://raw.githubusercontent.com/nodesense/kafka-workshop/master/setup.sh -O - -o /dev/null|bash
+
+
 wget https://raw.githubusercontent.com/nodesense/kafka-workshop/master/system-setup.sh -O - -o /dev/null|bash
 
 
