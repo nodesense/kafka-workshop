@@ -2,6 +2,7 @@
 set -x
 
 USER=`whoami`
+HOSTNAME=`hostname -f`
 
 apt update
 
@@ -74,7 +75,7 @@ ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa <<<y 2>&1 >/dev/null
 cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys
 
 
-ssh-keyscan localhost,0.0.0.0 > ~/.ssh/known_hosts
+ssh-keyscan localhost,0.0.0.0,k1.training.sh > ~/.ssh/known_hosts
 chmod +x hadoop-2.7.7/sbin/start-all.sh
 
 mkdir -p /data/hdfs
