@@ -76,7 +76,14 @@ cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys
 
 
 ssh-keyscan localhost,0.0.0.0,k1.training.sh > ~/.ssh/known_hosts
+
 chmod +x hadoop-2.7.7/sbin/start-all.sh
+chmod +x $HIVE_HOME/bin/hive
+chmod +x $HIVE_HOME/bin/beeline
+chmod +x $HIVE_HOME/bin/hiveserver2
+
+
+
 
 rmdir -rf /data
 
