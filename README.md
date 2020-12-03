@@ -92,6 +92,19 @@ Alter paritions
      
      $HIVE_HOME/bin/beeline -u jdbc:hive2://
 
+# Hive Server 2
+    ./hiveserver2
+    netstat -nlp | grep 10000
+    
+    ./beeline -u jdbc:hive2://localhost:10000 -n hadoopUser -p hadoopPassword
+    
+    
+    IN SQL 
+    
+    show databases;
+    
+    
+
      
  https://stackoverflow.com/questions/57232245/hiveserver2-hangs-while-starting-nothing-listening-on-port-10000
  
