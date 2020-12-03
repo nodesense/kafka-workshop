@@ -83,6 +83,7 @@ Alter paritions
     
     ps -ef | grep hiveserver2
     
+     netstat -tulpn | grep :10000
      netstat -tnlpa | grep `cat /var/run/hive/hive-server.pid`
      
      
