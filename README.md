@@ -76,3 +76,13 @@ Alter paritions
     $HIVE_HOME/bin/schematool -initSchema -dbType derby
 
     bin/hive --service metastore
+    
+    
+    jps 
+    
+    
+    ps -ef | grep hiveserver2
+    
+     netstat -tnlpa | grep `cat /var/run/hive/hive-server.pid`
+     
+     
