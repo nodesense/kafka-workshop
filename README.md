@@ -88,7 +88,10 @@ Alter paritions
      
      $HIVE_HOME/bin/schematool -dbType derby -initSchema
      
-     hive --service hiveserver
+     $HIVE_HOME/bin/hive --service hiveserver2
+     
+     $HIVE_HOME/bin/beeline -u jdbc:hive2://
+
      
  https://stackoverflow.com/questions/57232245/hiveserver2-hangs-while-starting-nothing-listening-on-port-10000
  
