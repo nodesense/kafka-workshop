@@ -25,4 +25,10 @@
  <value>k1.training.sh:8141</value>  
 </property>
     
+    <property> 
+ <name>yarn.resourcemanager.webapp.address</name> 
+ <value>k1.training.sh:8088</value>
+ <description>URL for job history server</description>
+</property>
+    
 </configuration>
