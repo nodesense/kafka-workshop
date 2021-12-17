@@ -57,6 +57,52 @@ enable `host: "localhost:5601"` in setup.kibana settings.
 
 
 
+## Log stash
+
+```
+wget https://artifacts.elastic.co/downloads/logstash/logstash-7.16.1-linux-x86_64.tar.gz
+tar xf logstash-7.16.1-linux-x86_64.tar.gz
+```
+
+To run logstash,
+
+```
+cd logstash-7.16.1
+bin/logstash -f logstash.conf
+```
+
+setup filters, input/output, pipeline, pipeline works, batchsize , batch delay.. enable api, api host/port in logstash..
+
+
+```
+ nano logstash.yml
+ ```
+
+```
+...
+ node.name: test
+
+...
+ path.data: /root/logstash/data
+
+...
+ pipeline.id: main
+
+...
+
+ pipeline.workers: 2
+ 
+ ...
+ 
+  pipeline.batch.size: 125
+
+```
+
+## to run multiple pipelines
+
+```
+nano pipelines.yml
+```
 
 
 
