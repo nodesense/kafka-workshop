@@ -48,6 +48,11 @@ disable `output.elasticsearch` settings
 enable `host: "localhost:5601"` in setup.kibana settings.
 
 
+## start filebeat
+
+```
+./filebeat -e
+```
 
 
 
