@@ -67,5 +67,11 @@ metricbeat.modules:
   period: 10s
   hosts: ["localhost:8778"]
   
+
+- module: kafka
+  metricsets: ["consumer"]
+  period: 10s
+  hosts: ["localhost:8778"]
+
   
 ```
