@@ -33,6 +33,8 @@ metricbeat.modules:
   period: 10s
   hosts: ["localhost:8775","localhost:8776","localhost:8777","localhost:8778"]
   namespace: "metrics"
+  
+
   path: "/jolokia/?ignoreErrors=true&canonicalNaming=false"
   #username: "user"
   #password: "secret"
@@ -57,6 +59,13 @@ metricbeat.modules:
 
   jmx.application:
   jmx.instance:
+  
+  
+
+- module: kafka
+  metricsets: ["producer"]
+  period: 10s
+  hosts: ["localhost:8778"]
   
   
 ```
