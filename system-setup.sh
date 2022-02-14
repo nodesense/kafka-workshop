@@ -36,8 +36,8 @@ echo "YARN_HOME=/$USER/hadoop-2.7.7" >>  /etc/environment
 
 echo "HADOOP_COMMON_LIB_NATIVE_DIR=/$USER/hadoop-2.7.7/lib/native" >>  /etc/environment
  
-echo "KAFKA_HOME=/$USER/confluent-5.5.1" >> /etc/environment
-echo "CONFLUENT_HOME=/$USER/confluent-5.5.1" >> /etc/environment
+echo "KAFKA_HOME=/opt/confluent-5.5.5" >> /etc/environment
+echo "CONFLUENT_HOME=/opt/confluent-5.5.5" >> /etc/environment
 
 echo "SPARK_HOME=/$USER/spark-2.3.2-bin-hadoop2.7" >> /etc/environment
 
@@ -51,13 +51,18 @@ apt install apt-transport-https -y
 
 
 
-wget http://packages.confluent.io/archive/5.5/confluent-5.5.1-2.12.tar.gz
-tar xf confluent-5.5.1-2.12.tar.gz
+wget http://packages.confluent.io/archive/5.5/confluent-5.5.5-2.12.tar.gz
+tar xf confluent-5.5.5-2.12.tar.gz
+
+sudo mv confluent-5.5.5 /opt
+
+chmod 777 /opt/confluent-5.5.5
+
 
 wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.47.tar.gz
 
 tar xf mysql-connector-java-5.1.47.tar.gz
-cp mysql-connector-java-5.1.47/*.jar confluent-5.5.1/share/java/kafka-connect-jdbc
+cp mysql-connector-java-5.1.47/*.jar /opt/confluent-5.5.5/share/java/kafka-connect-jdbc
 
 
 wget http://apache.cs.utah.edu/spark/spark-2.3.2/spark-2.3.2-bin-hadoop2.7.tgz
