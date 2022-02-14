@@ -13,8 +13,12 @@ apt install nodejs  -y
 
 apt install openjdk-8-jdk curl wget jq -y
 
-apt install python -y
- 
+wget https://repo.anaconda.com/miniconda/Miniconda3-py37_4.10.3-Linux-x86_64.sh
+
+
+# need to accept linux agreement
+source https://repo.anaconda.com/miniconda/Miniconda3-py37_4.10.3-Linux-x86_64.sh
+
 
 apt  install python-setuptools  -y
 apt install python-pip  -y
@@ -66,9 +70,14 @@ tar xf mysql-connector-java-5.1.47.tar.gz
 cp mysql-connector-java-5.1.47/*.jar /opt/confluent-5.5.5/share/java/kafka-connect-jdbc
 
 
-wget http://apache.cs.utah.edu/spark/spark-2.3.2/spark-2.3.2-bin-hadoop2.7.tgz
+wget https://archive.apache.org/dist/spark/spark-2.4.7/spark-2.4.7-bin-hadoop2.7.tgz
 
-tar xf spark-2.3.2-bin-hadoop2.7.tgz
+tar xf spark-2.4.7-bin-hadoop2.7.tgz
+
+sudo mv spark-2.4.7-bin-hadoop2.7 /opt
+
+chmod 777 /opt/spark-2.4.7-bin-hadoop2.7
+
 
 # rm spark-2.3.2-bin-hadoop2.7.tgz
 
