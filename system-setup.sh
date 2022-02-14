@@ -11,11 +11,10 @@ apt update
 
 apt install nodejs  -y
 
-apt install openjdk-8-jdk -y
+apt install openjdk-8-jdk curl wget jq -y
 
 apt install python -y
-
-apt install jq -y
+ 
 
 apt  install python-setuptools  -y
 apt install python-pip  -y
