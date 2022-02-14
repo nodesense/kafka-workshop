@@ -42,8 +42,10 @@ echo "CONFLUENT_HOME=/opt/confluent-5.5.5" >> /etc/environment
 echo "SPARK_HOME=/$USER/spark-2.3.2-bin-hadoop2.7" >> /etc/environment
 
 
+echo "export KAFKA_HOME=/opt/confluent-5.5.5" >> ~/.bashrc
+echo "export PATH=\$PATH:\$KAFKA_HOME/bin" >>  ~/.bashrc
+
 echo "export PATH=\$PATH:\$HADOOP_HOME/sbin:\$HADOOP_HOME/bin" >>  ~/.profile
-echo "export PATH=\$PATH:\$KAFKA_HOME/bin" >>  ~/.profile
 echo "export PATH=\$PATH:\$SPARK_HOME/bin:\$SPARK_HOME/sbin" >>  ~/.profile
 
 apt install mysql-server  -y
