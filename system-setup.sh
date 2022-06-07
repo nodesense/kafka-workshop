@@ -42,7 +42,7 @@ echo "HADOOP_COMMON_LIB_NATIVE_DIR=/$USER/hadoop-2.7.7/lib/native" >>  /etc/envi
 echo "KAFKA_HOME=/opt/confluent-5.5.5" >> /etc/environment
 echo "CONFLUENT_HOME=/opt/confluent-5.5.5" >> /etc/environment
 
-echo "SPARK_HOME=/$USER/spark-2.3.2-bin-hadoop2.7" >> /etc/environment
+echo "SPARK_HOME=/$USER/spark-3.1.2-bin-hadoop2.7" >> /etc/environment
 
 
 echo "export KAFKA_HOME=/opt/confluent-5.5.5" >> ~/.bashrc
@@ -75,13 +75,13 @@ tar xf mysql-connector-java-5.1.47.tar.gz
 cp mysql-connector-java-5.1.47/*.jar /opt/confluent-5.5.5/share/java/kafka-connect-jdbc
 
 
-wget https://archive.apache.org/dist/spark/spark-2.4.7/spark-2.4.7-bin-hadoop2.7.tgz
+wget https://archive.apache.org/dist/spark/spark-3.1.2/spark-3.1.2-bin-hadoop2.7.tgz
 
-tar xf spark-2.4.7-bin-hadoop2.7.tgz
+tar xf spark-3.1.2-bin-hadoop2.7.tgz
 
-sudo mv spark-2.4.7-bin-hadoop2.7 /opt
+sudo mv spark-3.1.2-bin-hadoop2.7 /opt
 
-chmod 777 /opt/spark-2.4.7-bin-hadoop2.7
+chmod 777 /opt/spark-3.1.2-bin-hadoop2.7
 
 
 # rm spark-2.3.2-bin-hadoop2.7.tgz
